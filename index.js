@@ -109,6 +109,7 @@ function buildSentence(sentence) {
     sentence = replaceSwearWords(sentence);
     sentence = replaceParentheses(sentence);
     sentence = replaceNumTime(sentence);
+    sentence = sentence.replace(/[\u0300-\u036f]/g, '');
     sentence = removeSpaces(sentence);
     return sentence
 }
