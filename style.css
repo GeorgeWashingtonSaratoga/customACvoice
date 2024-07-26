@@ -1,0 +1,76 @@
+@font-face {
+    font-family: FinkHeavy;
+    src: url('res/fonts/FinkHeavy.ttf');
+}
+
+temp {
+    background-color: #6E661B;
+}
+
+body {
+    background-color: #e9f5eb;
+    color: #1B1B1B;
+    font-family: "Arial Rounded MT Bold", Arial;
+    font-size: 30px;
+    margin: 0;
+}
+
+textarea {
+    font-family: "Arial Rounded MT Bold", Arial;
+    padding: 25px;
+    margin: 25px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.button {
+    font-family: "Arial Rounded MT Bold", Arial;
+    border: 0;
+    border-radius: 10px;
+    background-color: rgb(136, 201, 161);
+    color: white;
+    padding: 15px;
+    margin: 25px;
+    font-size: 30px;
+}
+
+.header {
+    font-family: FinkHeavy;
+    text-align: center;
+    margin: 20px;
+}
+
+.heading {
+    font-size: 70px;
+}
+
+.subheading {
+    font-size: 40px;
+}
+
+.content {
+    background-color: rgb(136, 201, 161);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    margin: 20px 250px;
+}
+
+.control {
+    background-color: rgb(248, 248, 240);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.entryFields {
+
+}
+
+.footer {
+    padding: 10px 0px;
+    margin: 0;
+    background-color: rgb(136, 201, 161);
+    color: white;
+}
