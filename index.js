@@ -109,8 +109,9 @@ function buildSentence(sentence) {
     sentence = replaceSwearWords(sentence);
     sentence = replaceParentheses(sentence);
     sentence = replaceNumTime(sentence);
-    sentence = sentence.replace(/[\u0300-\u036f]/g, '');
+    sentence = delatinise(sentence);
     sentence = removeSpaces(sentence);
+    console.log(sentence)
     return sentence
 }
 
@@ -139,13 +140,10 @@ function replaceNumTime(sentence) {
     
     let matches = sentence.match(/\d+/g);
 
-    console.log(matches)
-
     if (matches != null) {
         for (var i = 0; i < matches.length; i ++) {
             sentence = sentence.replace(matches[i], numToWord(matches[i]));
         }
-        console.log(sentence)
     }
 
     return sentence;
@@ -191,7 +189,33 @@ function numToWord(number) {
       }
     }
     
-    console.log(words)
     // Return the word form of the number
     return words;
+}
+
+function delatinise (sentence) {
+    sentence = sentence.replace(/[\u00E0-\u00E4\u0100-\u0105]/g, 'a');
+    sentence = sentence.replace(/[\u00E7\u0106-\u010D]/g, 'c');
+    sentence = sentence.replace(/[\u00E8-\u00EB\u0112-\u011B]/g, 'e');
+    sentence = sentence.replace(/[\u00EC-\u00EF\u0128-\u0133]/g, 'i');
+    sentence = sentence.replace(/[\u00F0]/g, 'th');
+    sentence = sentence.replace(/[\u017F]/g, /[\u00DF]/g);
+    sentence = sentence.replace(/[\u00F2-\u00F6\u00F9-\u00FD\u00FF\u014C-\u0151]/g, 'o');
+    sentence = sentence.replace(/[\u00F7]/g, 'divided by');
+    sentence = sentence.replace(/[\u00F9-\u00FC\u00FF\u0168-\u0172]/g, 'u');
+    sentence = sentence.replace(/[\u00FD\u00FF\u0176-\u0178\u0233]/g, 'y');
+    sentence = sentence.replace(/[\u010E-\u0111]/g, 'd');
+    sentence = sentence.replace(/[\u011C-\u0123]/g, 'g');
+    sentence = sentence.replace(/[\u0124-\u0127]/g, 'h');
+    sentence = sentence.replace(/[\u0134-\u0135]/g, 'j');
+    sentence = sentence.replace(/[\u0136-\u0138]/g, 'k');
+    sentence = sentence.replace(/[\u0124-\u0127]/g, 'h');
+    sentence = sentence.replace(/[\u0139-\u0142]/g, 'l');
+    sentence = sentence.replace(/[\u0143-\u014B]/g, 'n');
+    sentence = sentence.replace(/[\u0154-\u0159]/g, 'r');
+    sentence = sentence.replace(/[\u015A-\u0161]/g, 's');
+    sentence = sentence.replace(/[\u0162-\u0167]/g, 't');
+    sentence = sentence.replace(/[\u0174-\u0175]/g, 'w');
+    sentence = sentence.replace(/[\u0179-\u017E]/g, 'z');
+    return sentence;
 }
