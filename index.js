@@ -52,8 +52,9 @@ var letter_graphs = [
     "\u3078", "\u3079", "\u307A", "\u307B", "\u307C", "\u307D", 
     "\u307E", "\u307F", "\u3080", "\u3081", "\u3082", "\u3083",
     "\u3084", "\u3085", "\u3086", "\u3087", "\u3088", "\u3089", 
-    "\u308A", "\u308B", "\u308C", "\u308D", "\u308E","\u308F", 
-    "\u3090", "\u3091"
+    "\u308A", "\u308B", "\u308C", "\u308D", "\u308E", "\u308F", 
+    "\u3090", "\u3091", "\u00FE", "\u00F1", "\u00DF", "\u0153", 
+    "\u00F8", "\u00E5", "\u00E6" 
 ];
 
 var digraphs = [
@@ -94,7 +95,7 @@ function speakNextCharacter() {
 }
 
 function getCharacterAudioFile(character) {
-    if (character.match(/[a-z\u3041-\u3094\u0451\u0430-\u044F]/i)) {
+    if (character.match(/[a-z\u3041-\u3094\u0451\u0430-\u044F\u00FE\u00F1\u00DF\u0153\u00F8\u00E5\u00E6]/i)) {
         return "res/audio/" + character + ".wav";
     } else if (character == " ") {
         return null;
